@@ -1,15 +1,17 @@
-<div>
-    <div><img src="../../assets/images/logo.svg" alt="logo"></div>
-    <div class="links">
-        <a href="#">Collections</a>
-        <a href="#">Men</a>
-        <a href="#">Women</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+<div class="flex justify-between items-center h-32 border-b border-slate-200">
+    <div class="flex">
+        <img class="mr-16 w-44 h-6" src="../../assets/images/logo.svg" alt="logo">    
+        <div class="flex sm:justify-center space-x-4">
+            <a href="#">Collections</a>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
     </div>
-    <div>
-        <img src="../../assets/images/icon-cart.svg" alt="cart icon">
-        <img src="../../assets/images/image-avatar.png" alt="user avatar">
+    <div class="flex items-center">
+        <img class="pr-16" src="../../assets/images/icon-cart.svg" alt="cart icon">
+        <img class="h-14 w-14" src="../../assets/images/image-avatar.png" alt="user avatar">
     </div>
 </div>
 <app-cart></app-cart>
