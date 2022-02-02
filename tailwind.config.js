@@ -7,7 +7,18 @@ module.exports = {
   },
   darkMode: 'class', // or 'media' or 'class'
   theme: {
-    extend: {},
+    screen: {
+      'mobile': '375px',
+      'desktop': '1440px'
+    },
+    extend: { 
+      colors: {
+        'orange': '#FF7D1A'
+      },
+      fontFamily: {
+        sans: ['"Kumbh Sans"', 'sans-serif']
+      }
+    }
   },
   variants: {
     extend: {},
