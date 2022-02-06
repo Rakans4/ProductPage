@@ -4,3 +4,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.btn {
+  @apply bg-orange text-white h-10 w-full rounded-lg mt-6 font-bold hover:opacity-90;
+}
