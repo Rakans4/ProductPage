@@ -8,10 +8,10 @@
             <div class="flex">
                 <div>
                     <p class="product-name">Fall Limited Edition Sneakers</p>
-                    <p>$125.00 x 3 <b>$375.00</b> </p>
+                    <p>${{this.price}} x {{this.cartQuantity}} <b>${{this.total}}</b> </p>
                 </div>
             </div>
-            <img class="h-max w-max cursor-pointer" src="../../assets/images/icon-delete.svg" alt="">
+            <img (click)="emptyCart()" class="h-max w-max cursor-pointer" src="../../assets/images/icon-delete.svg" alt="">
         </div>
         <button class="btn mt-2">Checkout</button>
         <!-- <div class="">
