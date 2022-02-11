@@ -20,9 +20,13 @@
     <!-- quantity -->
       <div class="flex justify-between">
         <div class="flex justify-around items-center flex-initial w-32 h-12 mr-2 rounded-md bg-light-grayish-blue ">
-            <img class="w-max h-max" src="../../assets/images/icon-minus.svg" alt="">
-            <div class="">0</div>
-            <img class="w-max h-max" src="../../assets/images/icon-plus.svg" alt="">
+            <div (click)="decrement()" class="flex justify-center items-center cursor-pointer h-full w-full">
+              <img class="w-max h-max cursor-pointer" src="../../assets/images/icon-minus.svg" alt="">
+            </div>
+            <div class="w-16 text-center">{{this.quantity}}</div>
+            <div (click)="increment()" class="flex justify-center items-center cursor-pointer h-full w-full">
+              <img class="w-max h-max cursor-pointer" src="../../assets/images/icon-plus.svg" alt="">
+            </div>
         </div>
         <div class="flex-intial w-72">
           <button class="btn">Add to cart</button>
