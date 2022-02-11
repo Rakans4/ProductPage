@@ -1,7 +1,6 @@
 <div class="max-w-6xl mx-auto px-6 font-sans box-border h-screen flex-col">
-    <app-header [cartQuantity]="this.cartQuantity"></app-header>
+    <app-header (onEmptyCart)="emptyCart()" [cartQuantity]="this.cartQuantity"></app-header>
     <app-product-details (onQuantityChange)="changeQuantity($event)" (onCartQuantityChange)="changeCartQuantity()"></app-product-details>
-    <h1>{{this.quantity}}</h1>
     <!-- <div class="absolute left-0 top-0 w-screen h-screen bg-black bg-opacity-75 flex justify-center items-center">
         <div class="max-w-md">
             <div class="flex justify-end mb-6">

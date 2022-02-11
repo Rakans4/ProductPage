@@ -24,6 +24,9 @@ module.exports = {
       fontFamily: {
         sans: ['"Kumbh Sans"', 'sans-serif']
       },
+      minWidth: {
+        '1': '1rem',
+      },
       width: {
         '88': '22rem',
         '112': '28rem',

@@ -23,7 +23,7 @@
             <div (click)="decrement()" class="flex justify-center items-center cursor-pointer h-full w-full">
               <img class="w-max h-max cursor-pointer" src="../../assets/images/icon-minus.svg" alt="">
             </div>
-            <div class="w-16 text-center">{{this.quantity}}</div>
+            <div class="w-16 text-center">{{this.quantity || 1}}</div>
             <div (click)="increment()" class="flex justify-center items-center cursor-pointer h-full w-full">
               <img class="w-max h-max cursor-pointer" src="../../assets/images/icon-plus.svg" alt="">
             </div>

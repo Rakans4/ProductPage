@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'product-page';
-  quantity: number = 0;
+  quantity: number = 1;
   cartQuantity: number = 0;
 
 
@@ -17,5 +17,9 @@ export class AppComponent {
   
   changeCartQuantity(): void {
     this.cartQuantity += this.quantity;
+  }
+
+  emptyCart(): void {
+    this.cartQuantity = 0;
   }
 }

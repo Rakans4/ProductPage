@@ -3,20 +3,22 @@
         <p>Cart</p>
     </div>
     <div class="flex-column">
-        <div class="flex justify-between items-center h-16 mt-6">
-            <img class="rounded-lg h-14 w-14" src="../../assets/images/image-product-1-thumbnail.jpg" alt="">
-            <div class="flex">
-                <div>
-                    <p class="product-name">Fall Limited Edition Sneakers</p>
-                    <p>${{this.price}} x {{this.cartQuantity}} <b>${{this.total}}</b> </p>
+        <div *ngIf="!isEmpty" class="flex-col">
+            <div  class="flex justify-between items-center h-16 mt-6">
+                <img class="rounded-lg h-14 w-14" src="../../assets/images/image-product-1-thumbnail.jpg" alt="">
+                <div class="flex">
+                    <div>
+                        <p class="product-name">Fall Limited Edition Sneakers</p>
+                        <p>${{this.price}} x {{this.cartQuantity}} <b>${{this.total}}</b> </p>
+                    </div>
                 </div>
+                <img (click)="emptyCart()" class="h-max w-max cursor-pointer" src="../../assets/images/icon-delete.svg" alt="">
             </div>
-            <img (click)="emptyCart()" class="h-max w-max cursor-pointer" src="../../assets/images/icon-delete.svg" alt="">
+            <button class="btn mt-2">Checkout</button>
         </div>
-        <button class="btn mt-2">Checkout</button>
-        <!-- <div class="">
+        <div class="" *ngIf="isEmpty">
             Your cart is empty
-        </div> -->
+        </div>
     </div>
     
 </div>
