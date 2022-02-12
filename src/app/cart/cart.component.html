@@ -1,8 +1,8 @@
-<div class="divide-y w-88 h-90 p-5 text-sm shadow-2xl rounded-lg">
-    <div class="mb-6 font-bold">
+<div class="divide-y w-88 h-60 py-5 text-sm shadow-2xl rounded-lg bg-white">
+    <div class="mb-3 px-5 font-bold h-1/6">
         <p>Cart</p>
     </div>
-    <div class="flex-column">
+    <div class="flex-column h-5/6 px-5">
         <div *ngIf="!isEmpty" class="flex-col">
             <div  class="flex justify-between items-center h-16 mt-6">
                 <img class="rounded-lg h-14 w-14" src="../../assets/images/image-product-1-thumbnail.jpg" alt="">
@@ -16,7 +16,7 @@
             </div>
             <button class="btn mt-2">Checkout</button>
         </div>
-        <div class="" *ngIf="isEmpty">
+        <div class="text-center h-full flex justify-center items-center" *ngIf="isEmpty">
             Your cart is empty
         </div>
     </div>

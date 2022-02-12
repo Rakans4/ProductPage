@@ -4,9 +4,9 @@
     
     <!-- thumbnails -->
     <div class="flex justify-between w-full mt-8">
-        <img class="rounded-lg h-max w-1/5" src="../../assets/images/image-product-1-thumbnail.jpg" alt="">
-        <img class="rounded-lg h-max w-1/5" src="../../assets/images/image-product-2-thumbnail.jpg" alt="">
+        <img *ngFor="let image of images" class="rounded-lg h-max w-1/5" [src]="image" alt="">
+        <!-- <img class="rounded-lg h-max w-1/5" src="../../assets/images/image-product-2-thumbnail.jpg" alt="">
         <img class="rounded-lg h-max w-1/5" src="../../assets/images/image-product-3-thumbnail.jpg" alt="">
-        <img class="rounded-lg h-max w-1/5" src="../../assets/images/image-product-4-thumbnail.jpg" alt="">
+        <img class="rounded-lg h-max w-1/5" src="../../assets/images/image-product-4-thumbnail.jpg" alt=""> -->
     </div>
 </div>

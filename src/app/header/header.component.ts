@@ -9,6 +9,8 @@ export class HeaderComponent implements OnInit {
 
   @Input() cartQuantity!: number;
   @Output() onEmptyCart = new EventEmitter<any>();
+
+  cartOpen: boolean = false;
   
   constructor() { }
 
@@ -18,6 +20,11 @@ export class HeaderComponent implements OnInit {
   emptyCart(): void {
     this.cartQuantity = 0;
     this.onEmptyCart.emit(0);
+  }
+
+  toggleCart() {
+    console.log('clicked');
+    this.cartOpen = !this.cartOpen;
   }
 
 }

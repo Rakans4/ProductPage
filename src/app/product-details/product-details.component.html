@@ -1,21 +1,20 @@
 <div class="flex p-20">
-  <app-product-preview class=""></app-product-preview>
+  <app-product-preview [images]="this.product?.images" class=""></app-product-preview>
   <div class="px-20 flex flex-col justify-between">
-      <p class="text-orange tracking-widest font-bold">SNEAKER COMPANY</p>
+      <p class="text-orange tracking-widest font-bold">{{this.product?.brand}}</p>
 
-      <h1 class="text-5xl font-bold tracking-wide">Fall Limited Edition Sneakers</h1>
+      <h1 class="text-5xl font-bold tracking-wide">{{this.product?.model}}</h1>
 
       <div class="text-dark-grayish-blue">
-        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
-        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <p>{{this.product?.description}}</p>
       </div>
       
       <div>
-        <span class="text-2xl font-bold mr-10">$125.00</span>
-        <span class="text-orange bg-pale-orange p-2 rounded-md font-bold">
-          50%
+        <span class="text-2xl font-bold mr-10">${{this.product?.discountedPrice}}.00</span>
+        <span *ngIf="this.product?.discount" class="text-orange bg-pale-orange p-2 rounded-md font-bold">
+          %{{this.product?.discount}}
         </span>
-        <span class="block mt-2 line-through text-grayish-blue font-bold">$250.00</span>
+        <span class="block mt-2 line-through text-grayish-blue font-bold">${{this.product?.price}}.00</span>
       </div>
     <!-- quantity -->
       <div class="flex justify-between">

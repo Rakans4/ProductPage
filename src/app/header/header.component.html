@@ -11,11 +11,11 @@
     </div>
     <div class="flex items-center relative">
         <div class="relative">
-            <img class="lg:mr-16 mr-3 cursor-pointer" src="../../assets/images/icon-cart.svg" alt="cart icon">
+            <img (click)="toggleCart()" class="lg:mr-16 mr-3 cursor-pointer" src="../../assets/images/icon-cart.svg" alt="cart icon">
             <div *ngIf="this.cartQuantity > 0" class="absolute -top-2 left-4 bg-orange text-xs min-w-max px-2 text-center  text-white rounded-md">{{this.cartQuantity}}</div>
         </div>
         <img class="h-14 w-14 rounded-full hover:ring-4 hover:ring-orange cursor-pointer" src="../../assets/images/image-avatar.png" alt="user avatar">
-        <app-cart (onEmptyCart)="emptyCart()" [cartQuantity]="this.cartQuantity" class="absolute -bottom-56 right-0 z-10"></app-cart>
+        <app-cart *ngIf="cartOpen" (onEmptyCart)="emptyCart()" [cartQuantity]="this.cartQuantity" class="absolute -bottom-56 right-0 z-10"></app-cart>
     </div>
     
     
