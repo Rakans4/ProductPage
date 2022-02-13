@@ -12,6 +12,7 @@ export class ProductDetailsComponent implements OnInit {
   brand: string = '';
   cartQuantity: number = 0;
   product: Product | undefined;
+  isModalOpen: boolean = false;
 
   @Output() onQuantityChange = new EventEmitter<any>();
   @Output() onCartQuantityChange = new EventEmitter<any>();
@@ -34,5 +35,13 @@ export class ProductDetailsComponent implements OnInit {
 
   addToCart(): void {
     this.onCartQuantityChange.emit(this.cartQuantity);
+  }
+
+  openModal(): void {
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
   }
 }

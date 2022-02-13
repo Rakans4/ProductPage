@@ -1,28 +1,6 @@
 <div class="max-w-6xl mx-auto px-6 font-sans box-border h-screen flex-col">
     <app-header (onEmptyCart)="emptyCart()" [cartQuantity]="this.cartQuantity"></app-header>
     <app-product-details (onQuantityChange)="changeQuantity($event)" (onCartQuantityChange)="changeCartQuantity()"></app-product-details>
-    <!-- <div class="absolute left-0 top-0 w-screen h-screen bg-black bg-opacity-75 flex justify-center items-center">
-        <div class="max-w-md">
-            <div class="flex justify-end mb-6">
-                <img class="h-6" src="../assets/images/icon-close.svg" alt="">
-            </div>
-            <div class="relative">
-                <div class="h-12 w-12 rounded-full bg-white flex justify-center items-center absolute -left-6 top-56">
-                    <img src="../assets/images/icon-previous.svg" alt="">
-                </div>
-                <div class="h-12 w-12 rounded-full bg-white flex justify-center items-center absolute -right-6 top-56">
-                    <img src="../assets/images/icon-next.svg" alt="">
-                </div>
-                <img class="rounded-2xl" src="../assets/images/image-product-1.jpg" alt="">
-            </div>
-            <div class="flex justify-between w-full mt-8">
-                <img class="rounded-lg h-max w-1/5" src="../../assets/images/image-product-1-thumbnail.jpg" alt="">
-                <img class="rounded-lg h-max w-1/5" src="../../assets/images/image-product-2-thumbnail.jpg" alt="">
-                <img class="rounded-lg h-max w-1/5" src="../../assets/images/image-product-3-thumbnail.jpg" alt="">
-                <img class="rounded-lg h-max w-1/5" src="../../assets/images/image-product-4-thumbnail.jpg" alt="">
-            </div>
-        </div>
-    </div> -->
 </div>
 
 <router-outlet></router-outlet>
