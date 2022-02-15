@@ -6,11 +6,11 @@ module.exports = {
       './src/**/*.{html,ts}',
     ]
   },
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: { 
-      screen: {
-        'lg': '1050px'
+      screens: {
+        'mobile': {'max': '1023px'}
       },
       colors: {
         'orange': 'hsl(26, 100%, 55%)',

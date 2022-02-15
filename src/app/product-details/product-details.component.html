@@ -1,33 +1,35 @@
-<div class="flex p-20">
+<div class="flex p-20 mobile:flex-col mobile:p-0">
   <app-product-preview [modalOpen]="false" (onOpenModal)="openModal()" (onCloseModal)="closeModal()"></app-product-preview>
-  <div class="px-20 flex flex-col justify-between">
-      <p class="text-orange tracking-widest font-bold">{{this.product?.brand}}</p>
+  <div class="px-20 flex flex-col justify-between mobile:p-8">
+      <p class="text-orange tracking-widest font-bold mobile:mb-4">{{this.product?.brand}}</p>
 
-      <h1 class="text-5xl font-bold tracking-wide">{{this.product?.model}}</h1>
+      <h1 class="text-5xl font-bold tracking-wide mobile:text-4xl mobile:mb-4">{{this.product?.model}}</h1>
 
-      <div class="text-dark-grayish-blue">
+      <div class="text-dark-grayish-blue mobile:mb-4">
         <p>{{this.product?.description}}</p>
       </div>
       
-      <div>
+      <div class="mobile:flex mobile:justify-between mobile:mb-6">
+        <div>
         <span class="text-2xl font-bold mr-10">${{this.product?.discountedPrice}}.00</span>
         <span *ngIf="this.product?.discount" class="text-orange bg-pale-orange p-2 rounded-md font-bold">
           %{{this.product?.discount}}
         </span>
+        </div>
         <span class="block mt-2 line-through text-grayish-blue font-bold">${{this.product?.price}}.00</span>
       </div>
     <!-- quantity -->
-      <div class="flex justify-between">
-        <div class="flex justify-around items-center flex-initial w-32 h-12 mr-2 rounded-md bg-light-grayish-blue ">
-            <div (click)="decrement()" class="flex justify-center items-center cursor-pointer h-full w-full">
+      <div class="flex justify-between mobile:flex-col">
+        <div class="flex justify-around items-center flex-initial w-32 h-12 mr-2 rounded-md bg-light-grayish-blue mobile:w-full mobile:mb-3">
+            <div (click)="decrement()" class="flex justify-center items-center p-6 cursor-pointer h-full w-full mobile:justify-start">
               <img class="w-max h-max cursor-pointer" src="../../assets/images/icon-minus.svg" alt="">
             </div>
             <div class="w-16 text-center">{{this.quantity || 1}}</div>
-            <div (click)="increment()" class="flex justify-center items-center cursor-pointer h-full w-full">
+            <div (click)="increment()" class="flex justify-center items-center p-6 cursor-pointer h-full w-full mobile:justify-end">
               <img class="w-max h-max cursor-pointer" src="../../assets/images/icon-plus.svg" alt="">
             </div>
         </div>
-        <div class="flex-intial w-72">
+        <div class="flex-intial w-72 mobile:w-full">
           <button (click)="addToCart()" class="btn">Add to cart</button>
         </div>
       </div>

@@ -1,4 +1,4 @@
-<div class="max-w-6xl mx-auto px-6 font-sans box-border h-screen flex-col">
+<div class="max-w-6xl mx-auto px-6 font-sans box-border h-screen flex-col mobile:p-0">
     <app-header (onEmptyCart)="emptyCart()" [cartQuantity]="this.cartQuantity"></app-header>
     <app-product-details (onQuantityChange)="changeQuantity($event)" (onCartQuantityChange)="changeCartQuantity()"></app-product-details>
 </div>

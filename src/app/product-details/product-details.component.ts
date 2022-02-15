@@ -8,7 +8,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-  quantity: number = 0;
+  quantity: number = 1;
   brand: string = '';
   cartQuantity: number = 0;
   product: Product | undefined;

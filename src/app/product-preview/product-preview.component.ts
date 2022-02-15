@@ -25,7 +25,9 @@ export class ProductPreviewComponent implements OnInit {
   }
   
   selectImage(image: string): void {
+    console.log(image)
     this.selectedImage = image.replace('-thumbnail', '');
+    console.log(this.selectedImage)
   }
 
   openModal(): void {
@@ -39,6 +41,7 @@ export class ProductPreviewComponent implements OnInit {
   nextImage(): void {
     let index = this.images.indexOf(this.selectedImage);
     this.selectedImage = index + 1 > this.images.length-1? this.images[index] : this.images[index+1]
+    console.log(this.selectedImage.substring(0,this.selectedImage.length-4));
   }
 
   previousImage() {

@@ -1,21 +1,39 @@
-<div class="flex justify-between items-center h-32 border-b border-slate-200">
+<div class="flex justify-between items-center h-32 border-b border-slate-200 relative mobile:px-6 mobile:h-24">
     <div class="flex items-center h-full">  
+        <div class="hidden mobile:block mobile:mr-4" (click)="toggleSideNav()">
+            <div class="space-y-1">
+                <div class="w-5 h-1 bg-gray-600"></div>
+                <div class="w-5 h-1 bg-gray-600"></div>
+                <div class="w-5 h-1 bg-gray-600"></div>
+            </div>
+        </div>
         <img class="lg:mr-16 mr-6 w-44 h-6" src="../../assets/images/logo.svg" alt="logo">  
-        <div class="flex h-full items-center space-x-4 text-dark-grayish-blue">
+        <div class="flex h-full items-center space-x-4 text-dark-grayish-blue mobile:hidden">
             <a class="nav-link hover:text-black" href="#">Collections</a>
             <a class="nav-link hover:text-black" href="#">Men</a>
             <a class="nav-link hover:text-black" href="#">Women</a>
             <a class="nav-link hover:text-black" href="#">About</a>
             <a class="nav-link hover:text-black" href="#">Contact</a>
         </div>
+        <div *ngIf="sideNavOpen" class="absolute left-0 top-0 w-screen h-screen bg-black bg-opacity-75 z-10"></div>
+        <div class="flex flex-col items-start bg-white p-12 h-screen w-4/5 absolute top-0 z-20 left-0" *ngIf="sideNavOpen">
+            <div (click)="toggleSideNav()" class="mb-12">
+                <img src="../../assets/images/icon-close.svg" alt="">
+            </div>
+            <a class="side-nav-link hover:text-black" href="#">Collections</a>
+            <a class="side-nav-link hover:text-black" href="#">Men</a>
+            <a class="side-nav-link hover:text-black" href="#">Women</a>
+            <a class="side-nav-link hover:text-black" href="#">About</a>
+            <a class="side-nav-link hover:text-black" href="#">Contact</a>
+        </div>
     </div>
     <div class="flex items-center relative">
         <div class="relative">
-            <img (click)="toggleCart()" class="lg:mr-16 mr-3 cursor-pointer" src="../../assets/images/icon-cart.svg" alt="cart icon">
-            <div *ngIf="this.cartQuantity > 0" class="absolute -top-2 left-4 bg-orange text-xs min-w-max px-2 text-center  text-white rounded-md">{{this.cartQuantity}}</div>
+            <img (click)="toggleCart()" class="mr-16 mobile:mr-8 cursor-pointer" src="../../assets/images/icon-cart.svg" alt="cart icon">
+            <div *ngIf="this.cartQuantity > 0" class="absolute -top-2 left-4 bg-orange text-xs min-w-max px-2 text-center text-white rounded-md">{{this.cartQuantity}}</div>
         </div>
-        <img class="h-14 w-14 rounded-full hover:ring-4 hover:ring-orange cursor-pointer" src="../../assets/images/image-avatar.png" alt="user avatar">
-        <app-cart *ngIf="cartOpen" (onEmptyCart)="emptyCart()" [cartQuantity]="this.cartQuantity" class="absolute -bottom-56 right-0 z-10"></app-cart>
+        <img class="h-14 w-14 rounded-full hover:ring-4 hover:ring-orange cursor-pointer mobile:h-8 mobile:w-8" src="../../assets/images/image-avatar.png" alt="user avatar">
+        <app-cart *ngIf="cartOpen" (onEmptyCart)="emptyCart()" [cartQuantity]="this.cartQuantity" class="absolute -bottom-60 right-0 z-10"></app-cart>
     </div>
     
     

@@ -6,10 +6,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
   @Input() cartQuantity!: number;
   @Output() onEmptyCart = new EventEmitter<any>();
 
+  sideNavOpen: boolean = false;
   cartOpen: boolean = false;
   
   constructor() { }
@@ -25,6 +25,10 @@ export class HeaderComponent implements OnInit {
   toggleCart() {
     console.log('clicked');
     this.cartOpen = !this.cartOpen;
+  }
+
+  toggleSideNav(): void {
+    this.sideNavOpen = !this.sideNavOpen;
   }
 
 }

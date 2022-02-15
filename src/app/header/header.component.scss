@@ -1,3 +1,7 @@
 .nav-link {
   @apply hover:border-orange border-b-4 border-transparent h-full flex items-center justify-center;
 }
+
+.side-nav-link {
+  @apply hover:border-orange flex my-4 items-center font-bold;
+}

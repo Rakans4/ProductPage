@@ -3,7 +3,7 @@
         <img (click)="closeModal()" class="h-6 cursor-pointer" src="../assets/images/icon-close.svg" alt="">
     </div>
     <div class="relative flex justify-center">
-        <div *ngIf="modalOpen" class="absolute w-full top-52 flex justify-between">
+        <div *ngIf="modalOpen" class="absolute w-full top-1/2 flex justify-between">
             <div (click)="previousImage()" class="h-12 w-12 rounded-full bg-white flex justify-center items-center cursor-pointer">
                 <img src="../assets/images/icon-previous.svg" alt="">
             </div>
@@ -11,10 +11,18 @@
                 <img src="../assets/images/icon-next.svg" alt="">
             </div>
         </div>
-        <img (click)="openModal()" class="rounded-2xl h-max w-full cursor-pointer" [ngClass]="{'w-[90%]' : modalOpen}" [src]="this.selectedImage" alt="">
+        <div class="absolute w-full top-1/2 hidden  mobile:flex justify-between">
+            <div (click)="previousImage()" class="h-12 w-12 rounded-full bg-white flex justify-center items-center cursor-pointer ml-4">
+                <img src="../assets/images/icon-previous.svg" alt="">
+            </div>
+            <div (click)="nextImage()" class="h-12 w-12 rounded-full bg-white flex justify-center items-center cursor-pointer mr-4">
+                <img src="../assets/images/icon-next.svg" alt="">
+            </div>
+        </div>
+        <img class="rounded-2xl h-max w-full cursor-pointer mobile:rounded-none" [ngClass]="{'w-[90%]' : modalOpen}" [src]="this.selectedImage" alt="">
     </div>
     <!-- thumbnails -->
-    <div class="flex justify-between w-full mt-8">
+    <div class="flex justify-between w-full mt-8 mobile:hidden">
         <div class="h-max w-1/5 cursor-pointer rounded-lg hover:opacity-50" (click)="selectImage(thumbnail)" *ngFor="let thumbnail of thumbnails" [ngClass]="{'ring-2 ring-orange hover:opacity-100': thumbnail.includes(this.selectedImage.substring(0,this.selectedImage.length-4))}">
             <img [ngClass]="{'opacity-25': thumbnail.includes(this.selectedImage.substring(0,this.selectedImage.length-4))}" class="rounded-lg" [src]="thumbnail" alt="product thumbnail">
         </div>
